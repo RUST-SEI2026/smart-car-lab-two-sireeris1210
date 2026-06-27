@@ -189,3 +189,10 @@ impl Default for Executor {
         }
     }
 }
+
+fn main() {
+    let mut exec = Executor::new();
+    println!("初始: {:?}", exec.state());
+    exec.execute_batch("B F M L R M B F").unwrap();
+    println!("执行后: {:?}", exec.state());
+}
